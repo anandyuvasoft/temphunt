@@ -1,0 +1,8 @@
+- if @response[:errors].present?
+  - for error in @response[:errors]
+    %div{:class=>"alert alert-danger alert-dismissable"}
+      %a.close{"aria-label" => "close", "data-dismiss" => "alert", :href => "#"} ×
+      = error
+
+
+

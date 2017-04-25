@@ -1,0 +1,6 @@
+if(<%=@response[:success]%>){
+  window.location = "/"
+}
+else {
+  $("#form_msg").html("<%= j render 'shared/flash_message' %>")
+}

@@ -1,0 +1,23 @@
+@import "bootstrap";
+@import "spinner";
+
+#chat_box{
+  background-color: snow;
+  border: 1px solid silver;
+  padding: 20px;
+  position: absolute;
+  right: 16px;
+  top: 52px;
+  display:none;
+  z-index:1;
+}
+
+.message{
+  padding:10px;
+}
+
+.mt-20{
+  margin-top:20px;
+}
+
+

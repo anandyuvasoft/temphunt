@@ -1,0 +1,17 @@
+- if @messages.present?
+  - for message in @messages
+    .message
+      .col-xs-4
+        = image_tag("/assets/avatar.jpg")
+      .col-xs-8
+        %p= message.body
+    .clearfix
+- else
+  .message
+    %p.text-center 
+      There is no message.
+
+.text-center.mt-20   
+  %button.btn.btn-info{"data-target" => "#new_message", "data-toggle" => "modal", :type => "button"} New Message
+
+

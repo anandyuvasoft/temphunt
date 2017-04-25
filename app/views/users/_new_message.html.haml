@@ -1,0 +1,21 @@
+#new_message.modal.fade{:role => "dialog"}
+  .modal-dialog
+    / Modal content
+    .modal-content
+      .modal-header
+        %button.close{"data-dismiss" => "modal", :type => "button"} ×
+        %h4.modal-title New Message
+      = render "shared/spinner"  
+      .modal-body
+        #form_msg
+        = form_tag('/messages', remote: true )do
+          .form-group
+            %label{:for => "email"} To:
+            = select_tag "message[receiver_id]", options_from_collection_for_select(User.all_except(current_user), 'id', 'email'), class: 'form-control'
+          .form-group
+            %label{:for => "body"} Message:
+            = text_area_tag "message[body]", nil,:placeholder => "Enter Message", class: "form-control"
+          = hidden_field_tag 'message[sender_id]', current_user.id  
+          %button.btn.btn-default{:type => "submit"} Submit
+
+
